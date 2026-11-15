@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/header_bg"
+            android:padding="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zahlensystem-Konverter"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/card_bg"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:layout_marginTop="16dp">
+
+        <!-- Eingabe -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zahl eingeben:"
+            android:textColor="@color/text_main"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="0dp"/>
+
+        <EditText
+            android:id="@+id/inputField"
+            android:imeOptions="actionDone"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Zahl eingeben..."
+            android:inputType="textCapCharacters|textNoSuggestions"
+            android:singleLine="true"
+            android:textSize="18sp"
+            android:padding="12dp"
+            android:backgroundTint="#2463A6"/>
+
+        <!-- Von / Nach -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:weightSum="2">
+
+            <!-- Von -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Von System:"
+                    android:textColor="@color/text_main"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/fromBase"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:backgroundTint="#2463A6" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/swapButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom"
+                android:text="⇄"
+                android:textSize="20sp"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:backgroundTint="#2463A6"
+                android:background="@drawable/button_shape"
+                android:contentDescription="Systeme tauschen"/>
+
+            <!-- Nach -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="In System:"
+                    android:textColor="@color/text_main"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/toBase"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:backgroundTint="#2463A6" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/card_bg"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:layout_marginTop="16dp">
+
+        <!-- Ergebnis -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ergebnis:"
+            android:textColor="@color/text_main"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="0dp"/>
+
+        <TextView
+            android:id="@+id/resultField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="65dp"
+            android:gravity="center_vertical"
+            android:padding="14dp"
+            android:text="Ergebnis erscheint hier"
+            android:textColor="@color/text_main"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/result_shape"/>
+
+        <TextView
+            android:id="@+id/stepsField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_main"
+            android:textSize="14sp"
+            android:padding="8dp"
+            android:fontFamily="monospace"/>
+
+        <!-- Ergebnis Aktionen -->
+        <Button
+            android:id="@+id/copyButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ergebnis kopieren"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2463A6"
+            android:background="@drawable/button_shape"
+            android:layout_marginTop="8dp"/>
+        <Button
+            android:id="@+id/shareButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Teilen"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="#2463A6"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zurücksetzen"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="#4A5A6A"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/card_bg"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:layout_marginTop="16dp">
+
+        <!-- Verlauf -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Letzte Berechnungen"
+            android:textColor="@color/text_main"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="8dp"/>
+
+        <ListView
+            android:id="@+id/historyList"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@color/list_bg"
+            android:divider="#DDE3EA"
+            android:dividerHeight="1dp"
+            android:choiceMode="singleChoice"/>
+        <TextView
+            android:id="@+id/emptyHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Noch keine Berechnungen"
+            android:gravity="center" android:padding="24dp"
+            android:textColor="@color/text_main"
+            android:background="@color/list_bg"/>
+
+
+        <Button
+            android:id="@+id/loadHistoryButton"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aus Verlauf laden"
+            android:backgroundTint="#2463A6"
+            android:textAllCaps="false"
+            android:background="@drawable/button_shape"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/deleteHistoryButton"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verlauf löschen"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="#B94B4B"/>
+    </LinearLayout>
+
+        <!-- Status -->
+        <TextView
+            android:id="@+id/statusLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bereit"
+            android:textColor="@color/text_main"
+            android:gravity="center"
+            android:padding="14dp"
+            android:textSize="13sp"/>
+
+    </LinearLayout>
+</ScrollView>
