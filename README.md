@@ -17,7 +17,7 @@ Idee, Aufbau der Oberfläche, Entscheidungen zu den Funktionen und alle Tests st
 - **Kopieren und Teilen:** Das Ergebnis lässt sich kopieren oder zusammen mit dem Rechenweg über andere Apps teilen, zum Beispiel in Word, Notizen oder Messengern.
 - **Tauschen und Dunkelmodus:** Quell- und Zielsystem lassen sich mit einem Klick tauschen. Das Design passt sich dem hellen und dunklen Modus des Geräts an.
 
-- ## Screenshots
+## Screenshots
 
 <p>
   <img src="screenshots/1_start.jpeg" width="30%" alt="Startansicht">
