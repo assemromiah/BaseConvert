@@ -17,7 +17,7 @@ The idea, the layout, the decisions about the features and all the testing are m
 - **Copy and share:** You can copy the result or share it together with the solution steps via other apps, for example Word, notes or messengers.
 - **Swap and dark mode:** You can swap the source and target systems with one tap. The design follows the device's light and dark mode.
 
-- ## Screenshots
+## Screenshots
 
 <p>
   <img src="screenshots/1_start.jpeg" width="30%" alt="Start screen">
